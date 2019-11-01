@@ -4,6 +4,8 @@
   "description": "Gulp Simple - starter template for HTML development. Made by Ereburg",
   "main": "gulpfile.js",
   "scripts": {
+    "style:lint": "stylelint 'app/sass/**/*.scss' --syntax scss",
+    "style:fix": "stylelint 'app/sass/**/*.scss' --syntax scss --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -16,15 +18,23 @@
     "gulp-concat": "^2.6.1",
     "gulp-csso": "^3.0.1",
     "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^6.1.1",
     "gulp-load-plugins": "^2.0.1",
     "gulp-purgecss": "^1.2.0",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
-    "gulp-terser": "^1.2.0"
+    "gulp-svgstore": "^7.0.1",
+    "gulp-terser": "^1.2.0",
+    "gulp-webp": "^4.0.1",
+    "imagemin-jpeg-recompress": "^6.0.0",
+    "stylelint": "^11.1.1",
+    "stylelint-config-htmlacademy": "^0.1.4",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-order": "^3.1.1"
   },
   "browserslist": [
-    "last 8 version",
-    "> 1%"
+    "last 4 version",
+    "> 2%"
   ]
 }

@@ -1,19 +1,8 @@
 module.exports = function () {
-  $.gulp.task('image', () => {
-    return $.gulp.src('./app/images/**/*.{png,jpg,jpeg}')
-      .pipe($.plugins.imagemin([
-        $.compress({
-          progressive: true,
-          loops: 4,
-          min: 70,
-          max: 80,
-          quality: 'high'
-        }),
-        $.plugins.imagemin.gifsicle(),
-        $.plugins.imagemin.optipng({ optimizationLevel: 3 }),
-        $.plugins.imagemin.svgo({ plugins: [{ removeViewBox: false }, { cleanupIDs: false }] })
-      ]))
-      .pipe($.gulp.dest('./build/images/1'));
+  $.gulp.task("tiny", () => {
+    return $.gulp.src("./app/images/*.{png,jpg,jpeg}")
+      .pipe($.plugins.tinypngWeb({ verbose: true }))
+      .pipe($.gulp.dest("./build/images/"));
   });
 
   $.gulp.task("webp", () => {
@@ -28,4 +17,10 @@ module.exports = function () {
       .pipe($.plugins.rename("sprite.svg"))
       .pipe($.gulp.dest("./build/images"));
   });
+  // $.gulp.task("svg", () => {
+  //   return $.gulp.src("./app/images/**/sp-*.svg")
+  //     .pipe($.plugins.svgSprite())
+  //     // .pipe($.plugins.rename("sprite.svg"))
+  //     .pipe($.gulp.dest("./build/images"));
+  // });
 };

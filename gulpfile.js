@@ -9,7 +9,7 @@ global.$ = {
     }
 };
 
-$.path.tasks.forEach( (taskPath) => {
+$.path.tasks.forEach((taskPath) => {
     require(taskPath)(); // собираем задачи
 });
 

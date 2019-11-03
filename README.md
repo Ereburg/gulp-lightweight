@@ -1,6 +1,6 @@
 # Gulp Lightweight
 This is starter template for HTML development.
-It includes Sass/SCSS, JS, HTML and images compilers. 
+It includes Sass/SCSS, JS, HTML compilers and image compressors. 
 
 ### How to use: 
 All output files already are compressed, prefixed, minified and renamed.
@@ -19,7 +19,16 @@ All output files already are compressed, prefixed, minified and renamed.
 * `scripts-libs` for libraries, that contains in `app/scripts/libs` folder where you can put your .js libraries, that compiles your custom js to `build/scripts/libs.min.js`
 * `scripts-main` that compiles your custom .js to `build/scripts/scripts.min.js`.
 7. Task `style` converts Sass/SCSS file `style.{scss, sass}` to `build/styles/style.min.css`. 
-8. Task `images` compress all image .png/.jpg/.jpeg types and converts to .webp format.
+8. Task `images` starts up after all necessary files are putted into `./build/images/` folder. This task consists of several sub-tasks:
+- `tiny` task compress all image .png/.jpg/.jpeg types and moves them to `./build/images/`;
+- `webp` task converts to .webp format all files in `./build/images/` and puts them into the same folder;
+- `sprite` task works with `sp-*.svg` files in `./app/images/sprite` folder and compiles them into one file - `sprite.svg` and puts it in `./build/images/`;
+- `svg:remove` task simply replace all non-`sp-*.svg` files to the `./build/images/`;
+> if you once done `images` task, you don't need to repeat it.
+
+##### How to use `sprite.svg`? 
+Put this code in your .html file:
+`<svg class="YOUR_CLASS"> <use xlink:href="images/sprite.svg#sp-YOUR_ID"></use> </svg>`
 
 ### StyleLint
 I included StyleLint and its' plugins for better code accuracy and unified style guide. Plugins that were used:

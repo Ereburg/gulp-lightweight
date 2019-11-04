@@ -2,7 +2,6 @@ global.$ = {
     gulp: require('gulp'),
     plugins: require('gulp-load-plugins')(), // плагин, позволяющий не прописывать каждый плагин как переменную
     bs: require('browser-sync').create(), // онлайн-сервер
-    compress: require('imagemin-jpeg-recompress'),
 
     path: {
         tasks: require('./gulp/config/tasks.js') // путь к конфигу, где прописаны в котором собран массив из путей к задачам галпа

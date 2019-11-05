@@ -1,11 +1,11 @@
 {
-  "name": "gulp-simple",
+  "name": "html5-template-light",
   "version": "1.0.0",
-  "description": "Gulp Lightweight - starter template for HTML5 development. Made by Ereburg",
+  "description": "HTML5 Template (light) - starter template for HTML5 development. Made by Ereburg",
   "main": "gulpfile.js",
   "repository": {
     "type": "git",
-    "url": "https//github.com/Ereburg/gulp-lightweight"
+    "url": "https//github.com/Ereburg/templateHTML5-light"
   },
   "scripts": {
     "style:lint": "stylelint 'app/sass/**/*.scss' --syntax scss",

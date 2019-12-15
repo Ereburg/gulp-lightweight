@@ -1,16 +1,16 @@
 module.exports = function () {
     $.gulp.task('styles', () => {
-        return $.gulp.src('./app/sass/*.{scss,sass}')
+        return $.gulp.src('./app/scss/*.{scss,sass}')
             .pipe($.plugins.sourcemaps.init()) // инициализируем карту для стилевых файлов
             .pipe($.plugins.sass({
                 errorLogToConsole: true, // ошибки
                 outputStyle: "compressed" // сжимаем выходной стилевой файл
             }))
             .on('error', console.error.bind(console))
-            .pipe($.plugins.purgecss({
-                content: ['./build/**/*.html'],
+            // .pipe($.plugins.purgecss({
+            //     content: ['./build/**/*.html'],
                 // whitelistPatterns: [/show$/, /mobile$/] // здесь указываешь список селекторов, которые содержат значение
-            })) // а этот плагин удаляет ненужные селекторы, если их нет в html файлах отслеживаемой директории
+            // })) // а этот плагин удаляет ненужные селекторы, если их нет в html файлах отслеживаемой директории
             .pipe($.plugins.autoprefixer({
                 cascade: true
             })) // прописываем вендорные префиксы

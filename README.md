@@ -1,4 +1,4 @@
-# HTML5 Template (light)
+# HTML5 Template (lite)
 This is starter template for HTML development.
 It includes Sass/SCSS, JS, HTML compilers and image convertors. 
 
